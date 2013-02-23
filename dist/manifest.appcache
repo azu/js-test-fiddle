@@ -1,6 +1,7 @@
+# qunit,jasmine,mocha (undefined, #undefined)
 CACHE MANIFEST
 
-# Time: Sun Feb 24 2013 00:22:43 GMT+0900 (JST)
+# Time: Sun Feb 24 2013 02:33:03 GMT+0900 (JST)
 # This manifest was created by confess.js, http://github.com/jamesgpearce/confess
 #
 # Retrieved URL: http://localhost:3501/
@@ -22,11 +23,11 @@ CACHE MANIFEST
 
 CACHE:
 http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js
-http://localhost:3501/img/glyphicons-halflings-white.png
-http://localhost:3501/img/glyphicons-halflings.png
-http://www.google-analytics.com/ga.js
+http://brand.jquery.org/resources/qunit-mark-dark.gif
+http://pivotal.github.com/jasmine/images/jasmine_logo.png
+images/15f75683.mocha-logo.png
 scripts/vendor/cf69c6f2.modernizr.min.js
-styles/a41923ec.main.css
+styles/051c0509.main.css
 
 NETWORK:
 *

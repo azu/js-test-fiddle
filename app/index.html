@@ -31,6 +31,10 @@
         .unit-button-container {
             margin-top: 10px;
         }
+
+        .template {
+            display: none;
+        }
     </style>
     <script src="scripts/vendor/modernizr.min.js"></script>
 </head>
@@ -102,7 +106,7 @@ test("hello test", function () {
 });
 </script>
 <!--Jasmine-->
-<textarea id="template-jasmine-html" type="text/x-handlebars-template">
+<textarea id="template-jasmine-html" class="template" type="text/x-handlebars-template">
 <script type="text/javascript" src="http://pivotal.github.com/jasmine/lib/jasmine.js"></script>
 <script type="text/javascript" src="http://pivotal.github.com/jasmine/lib/jasmine-html.js"></script>
 <script type="text/javascript">
@@ -136,6 +140,29 @@ window.onload = function(){
     });
 }
 </script>
+
+<!--mocha-->
+<script id="template-mocha-js" type="text/x-handlebars-template">
+window.onload = function(){
+    mocha.setup('bdd');
+
+    describe("A suite", function() {
+        it("contains spec with an expectation", function() {
+           expect().fail("not implemented yet");
+        });
+    });
+
+    mocha.run();
+}
+</script>
+<!--Buster.JS-->
+<script id="template-busterjs-js" type="text/x-handlebars-template">
+buster.testCase("Date strftime tests", {
+    "// test" : function(){
+    }
+});
+</script>
+
 <!-- Add your site or application content here -->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
@@ -170,7 +197,7 @@ window.onload = function(){
     })();
 
     jQuery(function ($) {
-        var elemIDs = ["qunit", "jasmine", "mocha"];
+        var elemIDs = ["qunit", "jasmine", "mocha", "busterjs"];
         var units = {
             "qunit": {
                 "html": $("#template-qunit-html").html(),
@@ -180,16 +207,28 @@ window.onload = function(){
             "jasmine": {
                 "html": $("#template-jasmine-html").val(),
                 "js": $("#template-jasmine-js").html(),
-                "js_wrap": "l",//=> onload - not implement…
+                "js_wrap": "l",//=> onload - Post API does not implement…
                 "resources": [
                     "http://pivotal.github.com/jasmine/lib/jasmine.css"
                 ]
             },
             "mocha": {
-
+                "html": '<div id="mocha"></div>',
+                "js": $("#template-mocha-js").html(),
+                "js_wrap": "l",//=> onload - Post API does not implement…
+                "resources": [
+                    "https://raw.github.com/LearnBoost/expect.js/master/expect.js",
+                    "https://raw.github.com/visionmedia/mocha/master/mocha.js",
+                    "http://visionmedia.github.com/mocha/example/mocha.css" // https://raw.github.com/visionmedia/mocha/master/mocha.css is doesn't work…
+                ]
             },
             "busterjs": {
-
+                "js": $("#template-busterjs-js").html(),
+                "js_wrap": "l",//=> onload - Post API does not implement…
+                "resources": [
+                    "http://cdn.busterjs.org/releases/latest/buster-test.js",
+                    "http://cdn.busterjs.org/releases/latest/buster-test.css",
+                ]
             }
         };
         $(elemIDs).each(function (idx, elem) {

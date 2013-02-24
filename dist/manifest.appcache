@@ -1,7 +1,6 @@
-# qunit,jasmine,mocha (undefined, #undefined)
 CACHE MANIFEST
 
-# Time: Sun Feb 24 2013 02:49:09 GMT+0900 (JST)
+# Time: Sun Feb 24 2013 17:47:39 GMT+0900 (JST)
 # This manifest was created by confess.js, http://github.com/jamesgpearce/confess
 #
 # Retrieved URL: http://localhost:3501/
@@ -19,17 +18,18 @@ CACHE MANIFEST
 #   cacheFilter: .*
 #   networkFilter: null
 #  url: http://localhost:3501
-#  configFile: /Users/azu/.nodebrew/node/v0.8.18/lib/node_modules/yeoman/lib/support/confess.json
+#  configFile: /Users/azu/.nodebrew/node/v0.8.20/lib/node_modules/yeoman/lib/support/confess.json
 
 CACHE:
 http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js
 http://brand.jquery.org/resources/qunit-mark-dark.gif
-http://localhost:3501/app/images/glyphicons-halflings-white.png?1361640690
-http://localhost:3501/app/images/glyphicons-halflings.png?1361640690
+http://docs.busterjs.org/en/latest/_static/buster-logo.png
+http://localhost:3501/img/glyphicons-halflings-white.png
+http://localhost:3501/img/glyphicons-halflings.png
 http://pivotal.github.com/jasmine/images/jasmine_logo.png
 images/15f75683.mocha-logo.png
 scripts/vendor/cf69c6f2.modernizr.min.js
-styles/37c5406b.main.css
+styles/a41923ec.main.css
 
 NETWORK:
 *

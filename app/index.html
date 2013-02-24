@@ -6,7 +6,7 @@
 <!--[if IE 8]>
 <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js"> <!--<![endif]-->
+<html class="no-js" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -23,6 +23,11 @@
             margin: 10px 0 5px 50px;
             height: 100px;
         }
+
+        .unit-image-container img {
+            max-height: 100px;
+        }
+
         .unit-button-container {
             margin-top: 10px;
         }
@@ -68,6 +73,15 @@
                 <button id="mocha" class="btn btn-large btn-primary">Mocha Template</button>
             </div>
         </div>
+        <div class="row unit-test">
+            <div class="span2 unit-image-container" style="background-color: black">
+                <p><img src="http://docs.busterjs.org/en/latest/_static/buster-logo.png"
+                        alt="Buster.JS">
+                </p></div>
+            <div class="span4 unit-button-container">
+                <button id="busterjs" class="btn btn-large btn-primary">Buster.JS Template</button>
+            </div>
+        </div>
     </div>
 </div>
 <!--[if lt IE 7]>
@@ -76,15 +90,118 @@
     experience this site.</p>
 <![endif]-->
 
+<!-- Template Content here-->
+<!--QUnit-->
+<script id="template-qunit-html" type="text/x-handlebars-template">
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+</script>
+<script id="template-qunit-js" type="text/x-handlebars-template">
+test("hello test", function () {
+    // hello test
+});
+</script>
+<!--Jasmine-->
+<textarea id="template-jasmine-html" type="text/x-handlebars-template">
+<script type="text/javascript" src="http://pivotal.github.com/jasmine/lib/jasmine.js"></script>
+<script type="text/javascript" src="http://pivotal.github.com/jasmine/lib/jasmine-html.js"></script>
+<script type="text/javascript">
+(function () {
+    var jasmineEnv = jasmine.getEnv();
+    jasmineEnv.updateInterval = 1000;
+    var htmlReporter = new jasmine.HtmlReporter();
+    jasmineEnv.addReporter(htmlReporter);
+    jasmineEnv.specFilter = function (spec) {
+        return htmlReporter.specFilter(spec);
+    };
+    var currentWindowOnload = window.onload;
+    window.onload = function () {
+        if (currentWindowOnload) {
+            currentWindowOnload();
+        }
+        execJasmine();
+    };
+    function execJasmine() {
+        jasmineEnv.execute();
+    }
+})();
+</script>
+</textarea>
+<script id="template-jasmine-js" type="text/x-handlebars-template">
+window.onload = function(){
+    describe("A suite", function() {
+        it("contains spec with an expectation", function() {
+           this.fail();
+        });
+    });
+}
+</script>
 <!-- Add your site or application content here -->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
 <script>
-    jQuery(function($){
+    var app = {};
+    (function util() {
+        function post_to_url(path, params, method) {
+            method = method || "post"; // Set method to post by default, if not specified.
+
+            // The rest of this code assumes you are not using a library.
+            // It can be made less wordy if you use one.
+            var form = document.createElement("form");
+            form.setAttribute("method", method);
+            form.setAttribute("action", path);
+            for (var key in params) {
+                if (params.hasOwnProperty(key)) {
+                    var hiddenField = document.createElement("input");
+                    hiddenField.setAttribute("type", "hidden");
+                    hiddenField.setAttribute("name", key);
+                    hiddenField.setAttribute("value", params[key]);
+
+                    form.appendChild(hiddenField);
+                }
+            }
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        app.postToURL = post_to_url;
+    })();
+
+    jQuery(function ($) {
         var elemIDs = ["qunit", "jasmine", "mocha"];
-        console.log(elemIDs);
-    })
+        var units = {
+            "qunit": {
+                "html": $("#template-qunit-html").html(),
+                "js": $("#template-qunit-js").html(),
+                "resources": ["http://code.jquery.com/qunit/qunit-git.js", "http://code.jquery.com/qunit/qunit-git.css"]
+            },
+            "jasmine": {
+                "html": $("#template-jasmine-html").val(),
+                "js": $("#template-jasmine-js").html(),
+                "js_wrap": "l",//=> onload - not implement…
+                "resources": [
+                    "http://pivotal.github.com/jasmine/lib/jasmine.css"
+                ]
+            },
+            "mocha": {
+
+            },
+            "busterjs": {
+
+            }
+        };
+        $(elemIDs).each(function (idx, elem) {
+            var APIEndPoint = "http://jsfiddle.net/api/post/library/pure/";
+            var unit = units[elem];
+            var findElement = $.find("#" + elem);
+            $(findElement).on("click", function (evt) {
+                app.postToURL(APIEndPoint, unit, "POST");
+            });
+        });
+    });
+
 </script>
 
 </body>

@@ -23,6 +23,8 @@
 3. ``git add dist && git commit -m "your commit"``
 4. ``git subtree push --prefix dist origin gh-pages``
 
+* [Deployment · yeoman/yeoman Wiki](https://github.com/yeoman/yeoman/wiki/Deployment "Deployment · yeoman/yeoman Wiki")
+
 ## License
 
 MIT

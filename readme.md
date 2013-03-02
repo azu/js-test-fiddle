@@ -1,5 +1,6 @@
 # JavaScript Test Fiddle
 
+Provide template of JavaScript testing framework which can use at [jsFiddle](http://jsfiddle.net/ "Create a new Fiddle - jsFiddle").
 
 ## Usage
 

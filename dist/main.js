@@ -14,7 +14,11 @@ var app = {};
                 var hiddenField = document.createElement("input");
                 hiddenField.setAttribute("type", "hidden");
                 hiddenField.setAttribute("name", key);
-                hiddenField.setAttribute("value", params[key]);
+                if(key === "resources"){
+                    hiddenField.setAttribute("value", params[key].join(","));
+                }else{
+                    hiddenField.setAttribute("value", params[key]);
+                }
                 form.appendChild(hiddenField);
             }
         }

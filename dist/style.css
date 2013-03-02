@@ -2,9 +2,11 @@
     margin: 0 auto;
     max-width: 700px;
 }
-.site-header{
+
+.site-header {
     text-align: center;
 }
+
 .unit-test {
     margin: 10px 0 5px 50px;
     height: 120px;
@@ -31,10 +33,17 @@
 
 .unit-button-container {
     margin-top: 20px;
+    margin-bottom: 25px;
 }
 
 .template {
     display: none;
+}
+
+@media only screen and (max-width: 700px){
+    .github-fork-button {
+        display: none;
+    }
 }
 
 /* bootstrap */

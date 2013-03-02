@@ -25,6 +25,10 @@
 
 * [Deployment · yeoman/yeoman Wiki](https://github.com/yeoman/yeoman/wiki/Deployment "Deployment · yeoman/yeoman Wiki")
 
+## JSFiddle
+
+This WebService use [POST API](http://doc.jsfiddle.net/api/post.html "POST") of [jsFiddle](http://jsfiddle.net/ "Create a new Fiddle - jsFiddle").
+
 ## License
 
 MIT

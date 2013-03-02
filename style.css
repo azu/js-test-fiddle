@@ -1,3 +1,10 @@
+.container-narrow {
+    margin: 0 auto;
+    max-width: 700px;
+}
+.site-header{
+    text-align: center;
+}
 .unit-test {
     margin: 10px 0 5px 50px;
     height: 120px;
@@ -23,7 +30,7 @@
 }
 
 .unit-button-container {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .template {
@@ -32,6 +39,7 @@
 
 /* bootstrap */
 .btn-custom {
+    width: 200px;
     background-color: hsl(193, 32%, 49%) !important;
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b8d3da", endColorstr="#5493a4");

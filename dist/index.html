@@ -88,8 +88,8 @@
 <div id="qunit-fixture"></div>
 </script>
 <script id="template-qunit-js" type="text/x-handlebars-template">
-test("Hello test", function () {
-    // hello test
+test("A test", function () {
+    // not implemented yet
 });
 </script>
 <!--Jasmine-->
@@ -120,7 +120,7 @@ test("Hello test", function () {
 </textarea>
 <script id="template-jasmine-js" type="text/x-handlebars-template">
 describe("A suite", function() {
-    it("contains spec with an expectation", function() {
+    it("contains spec with a failure", function() {
        this.fail();
     });
 });
@@ -131,7 +131,7 @@ describe("A suite", function() {
 mocha.setup('bdd');
 
 describe("A suite", function() {
-    it("contains spec with an expectation", function() {
+    it("contains spec with a failure", function() {
        expect().fail("not implemented yet");
     });
 });
@@ -140,8 +140,9 @@ mocha.run();
 </script>
 <!--Buster.JS-->
 <script id="template-busterjs-js" type="text/x-handlebars-template">
-buster.testCase("Hello tests", {
-    "// test" : function(){
+buster.testCase("A testCase", {
+    "it is failure" : function(){
+        buster.assertions.fail("not implemented yet");
     }
 });
 </script>

@@ -97,31 +97,6 @@ test("A test", function () {
 });
 </script>
 <!--Jasmine-->
-<textarea id="template-jasmine-html" class="template" type="text/x-handlebars-template">
-<script type="text/javascript" src="http://pivotal.github.com/jasmine/lib/jasmine.js"></script>
-<script type="text/javascript" src="http://pivotal.github.com/jasmine/lib/jasmine-html.js"></script>
-<script type="text/javascript">
-(function () {
-    var jasmineEnv = jasmine.getEnv();
-    jasmineEnv.updateInterval = 1000;
-    var htmlReporter = new jasmine.HtmlReporter();
-    jasmineEnv.addReporter(htmlReporter);
-    jasmineEnv.specFilter = function (spec) {
-        return htmlReporter.specFilter(spec);
-    };
-    var currentWindowOnload = window.onload;
-    window.onload = function () {
-        if (currentWindowOnload) {
-            currentWindowOnload();
-        }
-        execJasmine();
-    };
-    function execJasmine() {
-        jasmineEnv.execute();
-    }
-})();
-</script>
-</textarea>
 <script id="template-jasmine-js" type="text/x-handlebars-template">
 describe("A suite", function() {
     it("contains spec with a failure", function() {

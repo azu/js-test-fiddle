@@ -40,11 +40,10 @@ jQuery(function ($) {
             "resources": ["http://code.jquery.com/qunit/qunit-git.js", "http://code.jquery.com/qunit/qunit-git.css"]
         },
         "jasmine": {
-            "html": $("#template-jasmine-html").val(),
             "js": $("#template-jasmine-js").html(),
             "wrap": "l",//=> onload
             "resources": [
-                "http://pivotal.github.com/jasmine/lib/jasmine.css"
+                "http://sukima.github.com/jasmine-all/jasmine-all-min.js"
             ]
         },
         "mocha-bdd": {
@@ -62,7 +61,7 @@ jQuery(function ($) {
             "wrap": "l",//=> onload
             "resources": [
                 "http://cdn.busterjs.org/releases/latest/buster-test.js",
-                "http://cdn.busterjs.org/releases/latest/buster-test.css",
+                "http://cdn.busterjs.org/releases/latest/buster-test.css"
             ]
         }
     };

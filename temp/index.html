@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>JavaScript Test Fiddle Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+
+    <link rel="stylesheet" href="styles/a41923ec.main.css">
+    <link href="./style.css" rel="stylesheet"/>
+    <script src="scripts/vendor/cf69c6f2.modernizr.min.js"></script>
+</head>
+<body>
+<aside class="github-fork-button">
+    <a href="https://github.com/azu/js-test-fiddle">
+        <img style="position: absolute; top: 0; left: 0; border: 0;"
+             src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"
+             alt="Fork me on GitHub">
+    </a>
+</aside>
+<div class="container-narrow" style="margin-top:50px">
+    <div class="navbar navbar-inverse">
+        <header id="overview" class="jumbotron subhead site-header">
+            <div class="container">
+                <h1>JavaScript Test Fiddle Template</h1>
+
+                <p class="lead">JavaScript testing Framework Template for <a href="http://jsfiddle.net/" title="jsFiddle">JSFiddle</a></p>
+            </div>
+        </header>
+        <div class="main-container" role="main">
+            <div class="row unit-test">
+                <div class="span2 unit-image-container" style="background-color: #380D38;">
+                    <p>
+                        <img src="http://brand.jquery.org/resources/qunit-mark-dark.gif"
+                             alt="Qunit">
+                    </p></div>
+                <div class="span4 unit-button-container">
+                    <button id="qunit" class="btn btn-large btn-custom">QUnit Template</button>
+                </div>
+            </div>
+            <div class="row unit-test">
+                <div class="span2 unit-image-container">
+                    <p><img src="http://pivotal.github.com/jasmine/images/jasmine_logo.png"
+                            alt="Jasmine">
+                    </p></div>
+                <div class="span4 unit-button-container">
+                    <button id="jasmine" class="btn btn-large btn-custom">Jasmine Template</button>
+                </div>
+            </div>
+            <div class="row unit-test">
+                <div class="span2 unit-image-container">
+                    <p><img src="images/15f75683.mocha-logo.png"
+                            alt="mocha">
+                    </p></div>
+                <div class="span4 unit-button-container">
+                    <button id="mocha-bdd" class="btn btn-large btn-custom">Mocha-BDD Template</button>
+                </div>
+            </div>
+            <div class="row unit-test">
+                <div class="span2 unit-image-container" style="background-color: black">
+                    <p><img src="http://docs.busterjs.org/en/latest/_static/buster-logo.png"
+                            alt="Buster.JS">
+                    </p></div>
+                <div class="span4 unit-button-container">
+                    <button id="busterjs" class="btn btn-large btn-custom">Buster.JS Template</button>
+                </div>
+            </div>
+            </div>
+    </div>
+</div>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser
+    today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better
+    experience this site.</p>
+<![endif]-->
+
+<!-- Template Content here-->
+<!--QUnit-->
+<script id="template-qunit-html" type="text/x-handlebars-template">
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+</script>
+<script id="template-qunit-js" type="text/x-handlebars-template">
+test("A test", function () {
+    // not implemented yet
+});
+</script>
+<!--Jasmine-->
+<script id="template-jasmine-js" type="text/x-handlebars-template">
+describe("A suite", function() {
+    it("contains spec with a failure", function() {
+       this.fail();
+    });
+});
+</script>
+
+<!--mocha-->
+<script id="template-mocha-bdd-js" type="text/x-handlebars-template">
+mocha.setup('bdd');
+
+describe("A suite", function() {
+    it("contains spec with a failure", function() {
+       expect().fail("not implemented yet");
+    });
+});
+
+mocha.run();
+</script>
+<!--Buster.JS-->
+<script id="template-busterjs-js" type="text/x-handlebars-template">
+buster.testCase("A testCase", {
+    "it is failure" : function(){
+        buster.assertions.fail("not implemented yet");
+    }
+});
+</script>
+
+
+<!-- Add your site or application content here -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="scripts/vendor/8bc61845.jquery.min.js"><\/script>')</script>
+<script src="main.js" charset="utf-8"></script>
+
+</body>
+</html>
